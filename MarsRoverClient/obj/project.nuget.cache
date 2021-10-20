@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "55sOLnuJe3Y8T6TIBmfNMHeSqwOcaE0yelbiT/CvWq6wHVApbRHzNkqmO/WFLOy8VkbmqgLYEp0bUL5ltFbSvw==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Next Mars Rover\\MarsRoverClient\\MarsRoverClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\IAS\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
+    "C:\\Users\\IAS\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Mars Rover Class Diagaram">
+    <Position X="4.917" Y="1.226" Height="0.291" Width="2.317" />
+  </Comment>
+  <Comment CommentText="Command Pattern to execute the command">
+    <Position X="3.642" Y="2.929" Height="0.291" Width="3.451" />
+  </Comment>
+  <Comment CommentText="State Pattern to Control the Rover Navigation">
+    <Position X="5.405" Y="9.098" Height="0.291" Width="2.963" />
+  </Comment>
+  <Comment CommentText="Observer Pattern to inform the Rover Positon">
+    <Position X="1.391" Y="11.314" Height="0.291" Width="2.963" />
+  </Comment>
+  <Comment CommentText="Simple Factory to create a required objects">
+    <Position X="10.145" Y="7.574" Height="0.315" Width="2.963" />
+  </Comment>
+  <Class Name="MarsRover.MarsRover_BLL.Rover" Collapsed="true">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <AssociationLine Name="_observers" Type="MarsRover.MarsRover_BLL.Notification.IObserver" FixedFromPoint="true">
+      <Path>
+        <Point X="3.062" Y="8.562" />
+        <Point X="3.062" Y="10.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgCAAAgIAAAAAAAAIEAgFBAAAAAAAQAAEA=</HashCode>
+      <FileName>MarsRover_BLL\Rover.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="RoverControl" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_observers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.RoverOperator" Collapsed="true">
+    <Position X="2.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAgQABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\RoverOperator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="command" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Command.RoverCommand" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Command\RoverCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.225" />
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Command.LeftCommand" Collapsed="true">
+    <Position X="5.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Command\LeftCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Command.RightCommand" Collapsed="true">
+    <Position X="7.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Command\RightCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Command.MoveForwardCommand" Collapsed="true">
+    <Position X="9" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Command\MoveForwardCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Command.RoverCommandsFactory" Collapsed="true">
+    <Position X="4.75" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Command\RoverCommandsFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.Client">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <AssociationLine Name="RoverOperator" Type="MarsRover.MarsRover_BLL.RoverOperator">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.273" Y="0.118" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Rover" Type="MarsRover.MarsRover_BLL.Rover" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="5.868" />
+        <Point X="1.188" Y="8.281" />
+        <Point X="2.25" Y="8.281" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.12" Y="-0.38" Height="0.182" Width="1.34" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAABAQAAQAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="RoverOperator" />
+      <Field Name="Rover" />
+      <Field Name="leftCommand" />
+      <Field Name="rightCommand" />
+      <Field Name="forwardCommand" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Control.RoverControl" Collapsed="true">
+    <Position X="7" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACIAAAAAAAAAAAgAEAAAACAABAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Control\RoverControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Control.SouthDirection" Collapsed="true">
+    <Position X="8.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Control\SouthDirection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Control.WestDirection" Collapsed="true">
+    <Position X="10" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Control\WestDirection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Control.EastDirection" Collapsed="true">
+    <Position X="6.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Control\EastDirection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Control.NorthDirection" Collapsed="true">
+    <Position X="4.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Control\NorthDirection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarsRover.MarsRover_BLL.Control.DirectionFactory" Collapsed="true">
+    <Position X="10" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Control\DirectionFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MarsRover.MarsRover_BLL.Command.ICommand" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Command\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MarsRover.MarsRover_BLL.Notification.IObserver" Collapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>MarsRover_BLL\Notification\IObserver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MarsRover.MarsRover_BLL.IRover" Collapsed="true">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACACAAAAIAAAAAAAAIEAgEAAAAAAAAAAAEA=</HashCode>
+      <FileName>MarsRover_BLL\IRover.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MarsRover.MarsRover_BLL.Control.EnumDirection">
+    <Position X="10" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAQ=</HashCode>
+      <FileName>MarsRover_BLL\Control\enumDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MarsRover.MarsRover_BLL.Command.EnumCommand">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>MarsRover_BLL\Command\EnumCommand.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
